@@ -1,0 +1,355 @@
+[SOUND] Welcome
+
+at our MOOC lecture
+series on Econometrics.
+
+The topic of this lecture
+is Simple Regression, and
+
+in particular, its motivation.
+
+In this introductory lecture, we will
+consider a simple example concerning
+
+the weekly sales of a product with a price
+that can be set by the store manager.
+
+We expect that lower prices
+lead to higher sales.
+
+The econometrician tries
+to quantify the magnitude
+
+of these consumer reactions
+to such price changes.
+
+This helps the store manager
+to decide to increase or
+
+decrease the price if the goal is to
+maximize the turnover for this product.
+
+Turnover is sales times price.
+
+In our example, we have two years
+of weekly data, that is,
+
+104 observations on sales and prices.
+
+And the histogram of the sales
+data look like this.
+
+You can see that the majority of weekly
+sales are somewhere in between 90 and
+
+95 units, with a minimum of 86
+and a maximum of 98.
+
+Sales of 92 and 93 units are most
+often observed, each 19 times.
+
+The store manager can freely decide
+each week on the price level,
+
+presented on the next slide.
+
+This histogram shows that
+prices vary from 51 to 57,
+
+with a median price of 54 and
+an average price also close to 54.
+
+When we plot sales against price
+that occur in the same week,
+
+we get the following scatter diagram.
+
+Note, that the number of points in this
+diagram is less than 104 because some
+
+weeks have identical values
+for price and sales.
+
+You can observe that
+higher prices associate,
+
+in general, with lower sales and
+lower prices with higher sales.
+
+You can also see this in this table,
+where lower prices are associated
+
+with higher sales at
+the left part of the table.
+
+If we change the points in the original
+scatter into the average sales data,
+
+we see that the line connecting
+the average values is roughly linear.
+
+And when we go back to the scatter
+diagram, we see that a straight
+
+line can be fitted reasonably well
+to the points in this diagram.
+
+The actual sales are the dots, and
+the predicted sales are on the line.
+
+A given price does not always
+associate with the same sales level,
+
+as there are other factors that
+also cause variation in sales.
+
+For example, the weekly number of
+customers who do their shopping
+
+in this store will influence sales.
+
+The observed data are reasonably
+close to the line, but
+
+they do not lie exactly on it.
+
+For a given price and a given line,
+predicted sales is equal to the value of
+
+�a� plus �b� times Price.
+
+We denote the difference
+between the actual sales and
+
+the predicted sales by the residual e.
+
+The coefficient b measures the slope
+or marginal effect,
+
+that is, the change in sales when
+the price changes with one unit.
+
+When the slope is equal to zero,
+
+this corresponds to observations,
+for example, like this.
+
+For such data there does not seem to be
+any relationship between sales and price.
+
+Going back to the original
+scatter diagram,
+
+the values of the coefficients a and
+b are of interest to the store manager
+
+as they offer the opportunity to
+predict sales for a given price.
+
+This helps to set a new price
+if sales are felt as too low.
+
+The histogram of sales would just
+suggest a prediction of around 92
+
+or 93 units, as this is the mean
+value of the weekly sales data.
+
+However, from the scatter
+plot of sales and price data,
+
+you see that different price levels
+associate with different sales levels.
+
+And this suggests that you can
+use the price to predict sales.
+
+To summarize, the linear equations
+Sales is �a� plus �b� times Price, allows
+
+us to predict the effects of a price cut
+that the store manager did not try before,
+
+or to estimate the optimal
+price to maximize turnover.
+
+Now I invite you to consider
+the following test question.
+
+Suppose you are interested to find
+the price that maximizes turnover,
+
+where turnover is defined as
+the product of Price and Sales.
+
+How can you find that
+price from the relation
+
+Sales is �a� + �b� times Price?
+
+The answer is as follows.
+
+As turnover is Price times Sales,
+or �a� times P plus �b� times P-squared,
+
+the derivative of turnover with
+respect to price is equal to a + 2 bP.
+
+Setting this equal to 0 gives
+an optimal price of -a / 2b.
+
+In our lectures on simple regression,
+
+we focus on two variables of interest we
+denote by y and x, where one variable, x,
+
+is thought to be helpful
+to predict the other, y.
+
+This helpful variable x we
+call the regressor variable or
+
+the explanatory factor.
+
+And the variable y that we want to
+predict is called the dependent variable,
+
+or the explained variable.
+
+The histogram of our sales data
+may suggest that the sales
+
+distribution can be approximated
+by a normal distribution.
+
+A simple way of summarizing
+the 104 observations on sales
+
+is written as shown on the slide.
+
+This notation means that the observations
+of sales are considered to be
+
+independent draws from the same
+Normal distribution, with mean mu and
+
+variance sigma squared,
+abbreviated as NID.
+
+Note that we use the Greek letters
+mu and sigma squared for
+
+parameters that we do not know and that we
+want to estimate from the observed data.
+
+The probability distribution of sales
+is described by just two parameters,
+
+the mean and the variance.
+
+On this slide you see the graph of
+a standardized normal distribution with
+
+mean 0 and variance 1.
+
+And if you wish,
+you can consult the Building Blocks for
+
+further details on
+the normal distribution.
+
+For a normal distribution with mean mu,
+the best prediction for
+
+the next observation on sales
+is equal to that mean mu.
+
+An estimator of the population mean
+mu is given by the sample mean,
+
+where y subscript i denotes
+the i-th observation on sales.
+
+The sample mean is called an unconditional
+prediction of sales, as it does not
+
+depend on any other variable.
+
+In many cases,
+
+it helps to use additional
+information to improve the prediction.
+
+In our example,
+
+price may help to predict sales because
+lower prices will lead to higher sales.
+
+There are four more lectures
+in this set to come.
+
+Lecture 1.2 introduces the
+simple regression model, and
+
+Lecture 1.3 shows how you can find
+the regression line from the actual data.
+
+We will also show how you can evaluate
+the accuracy of the regression outcomes.
+
+In Lecture 1.4 we will examine which
+statistical assumptions support the use
+
+of the simple regression model and
+
+what are the consequences when some
+of these assumptions are not met.
+
+The required modifications
+provide the motivation for
+
+the other lectures of this MOOC,
+
+that all consist of extensions of
+the basic ideas of simple regression.
+
+And finally,
+
+Lecture 1.5 provides some illustrations
+of the use of simple regression.
+
+The modules 2 through 6 of this MOOC
+provide various extensions, but
+
+the simple regression model provides
+the fundamental basis.
+
+And here is another test for you to make,
+which deals with the variation of
+
+points around the imaginary line and
+the quality of your predictions.
+
+The correct answer is diagram B,
+
+because this diagram has smallest
+variation around the imaginary line.
+
+For a given price level,
+the range of potential forecasts for
+
+sales is smallest for case B.
+
+So here you may expect to
+make better predictions.
+
+Now I invite you to make
+the training exercise,
+
+where you can train yourself with the
+topics that were treated in this lecture.
+
+You can find this exercise on the website.
+
+And this concludes our first
+lecture on Simple Regression.

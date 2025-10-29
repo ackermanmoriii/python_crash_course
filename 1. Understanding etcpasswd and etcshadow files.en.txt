@@ -1,0 +1,265 @@
+In this lecture we'll discuss how the
+Linux system performs authentication.
+
+There are two files of particular
+interest to us.
+
+etc password and etc shadow.
+
+The etc password file contains basic
+
+information about each user account on
+the system.
+
+Let's see the contents of the file.
+
+I'm opening it using LESS.
+
+Each line of the file represents a single
+account of type normal user or system
+
+user and there are 7 fields on each line.
+
+Let's take these fields one by one.
+
+The first field is the user's login name.
+
+The second field at the beginning of the
+
+Unix era used to contain an encrypted password.
+
+Nowadays it contains the letter X to
+
+denote that a password has been assigned
+but was saved in another file, the shadow file.
+
+If this second field is blank the user
+does not need to enter a password to login.
+
+The third field is the user ID.
+
+A positive integer number assigned to the
+
+user followed by the group ID in the
+fourth field.
+
+The fifth field is a comment.
+
+Sometimes it is left blank.
+
+The next field is the user's home
+directory and finally the last field is
+
+the default shell usually set to bin bash.
+
+If instead of bash you see there no login
+
+or false it means that is a system user
+that's not allowed to log into the system.
+
+That was the format of etc password.
+
+I'm exiting the file by pressing on Q.
+
+Let's go ahead and take a look at the
+format of etc shadow.
+
+This is the file.
+
+It stores the actual passwords of the
+
+users in an encrypted format.
+
+In fact there is the hash of the password
+
+with additional properties related to
+users passwords like password expiration dates.
+
+The etc password file is word readable
+and that means that any user can read it
+
+but the shadow file, this file, is only
+readable by the root account.
+
+Let's take a deeper look at the content
+of the shadow file.
+
+Each line of the file contains nine comma
+separated fields.
+
+The first field is the username and this
+is how a line in the shadow file is
+
+connected to the corresponding line in
+the password file.
+
+The second field represents the password.
+
+The entire string between these two colons.
+
+This is the password.
+
+Then come seven fields related to
+
+password expiration dates like last
+password change, minimum and maximum
+
+password age and so on.
+
+I won't dive deeper into this but if you
+
+are interested you can find a full
+description of these fields in the man
+
+page of the shadow file.
+
+Man shadow.
+
+You find here a full description of each field.
+
+Let's get back to the shadow file.
+
+If the password field contains an
+asterisk or an exclamation point the user
+
+will not be able to log in to the system
+using the password authentication.
+
+Other login methods like key based
+authentication or switching to the user
+
+are still allowed.
+
+This is the case of root in the latest
+
+version of Kali Linux.
+
+Let's take a deeper look at the password field.
+
+This selected field.
+
+Usually the password format is set to
+
+$type, in this case $6, $salt and $hash.
+
+The type 6 in this case is the
+
+cryptographic hash algorithm used and can
+have the following values.
+
+1 means $md5, 2a means $blowfish, 2y
+means $xblowfish, 5 means $sha256 and 6
+
+in this case means $sha512.
+
+Then comes the salt, this part, and then
+
+the hash of the password and the salt
+together, this part.
+
+This is the hash calculated using in this
+case $sha512 which is an extremely strong algorithm.
+
+Let me tell you a few words about the salt.
+
+This field in this example.
+
+A salt combined with the password is
+added to the hashing process to enforce
+
+the uniqueness of the output hash or in
+other words the same password will give
+
+different hashes because of this random salt.
+
+This mitigate password attacks like
+
+rainbow tables.
+
+The salt is randomly generated for each
+
+password but it's not secret like the
+password is.
+
+If through having the hash an attacker
+can find the clear text password, all the
+
+other similar passwords of other users
+are still secure because their hash is different.
+
+To make it crystal clear let me show you
+an example.
+
+I'm exiting the shadow file by pressing
+on Q and I'll create two user accounts.
+
+They will have the same password.
+
+I'm creating the first user named user1
+
+and then set its password to test.
+
+User add, user1.
+
+The user was created.
+
+Let's set its password to test.
+
+Password, user1.
+
+And I'm typing test two times.
+
+Let's create the second user named user2
+with the same password test.
+
+User add, user2.
+
+Passwd, user2.
+
+And I'm typing test two times.
+
+Now let's check the hashes in the shadow file.
+
+I'm printing out the last ten lines.
+
+These are the lines related to the users
+
+I've just created.
+
+And we notice that even though both users
+
+have the same password, the saved hash is different.
+
+It is unique.
+
+That's because it has computed the hash
+using both the common password and the
+
+salt which is unique for each user.
+
+Now if a hacker manages to find the
+
+password of the first user having the
+hash, the hacker doesn't know that the
+
+second user has the same password because
+there is another hash in the file.
+
+One last thing I want to tell you is that
+these files, password and shadow, should
+
+not be edited by hand unless you know
+what you are doing.
+
+Always use a command that is designed for
+this purpose.
+
+That's all.
+
+Now that you know where the passwords are
+
+stored on a Linux system, I'll go ahead
+and show you in the next lectures how the
+
+Linux groups are organized and how to
+manage users and groups.
